@@ -5,11 +5,11 @@ import { FaRegArrowAltCircleUp, FaRegArrowAltCircleDown, FaDollarSign } from "re
 
 
 
-const panel = () => {
+const panel = ({ income, expense, total }) => {
   return  <C.Container>
-    <PanelItem title="Income" Icon={FaRegArrowAltCircleUp} value="1000"/>
-    <PanelItem title="Expenses" Icon={FaRegArrowAltCircleDown} value="2000"/>
-    <PanelItem title="Balance" Icon={FaDollarSign} value="3000"/>   
+    <PanelItem title="Income" Icon={FaRegArrowAltCircleUp} value={income} />
+    <PanelItem title="Expenses" Icon={FaRegArrowAltCircleDown} value={expense} />
+    <PanelItem title="Balance" Icon={FaDollarSign} value={total} />   
   </C.Container>;
 };
 

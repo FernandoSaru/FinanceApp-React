@@ -7,15 +7,29 @@ const Form = () => {
     const [amount, setAmount] = useState("");
     const [isExpense, setExpense] = useState(false);
 
+    const transactionID = () => Math.round(Math.random() * 1000);
+
     const handleSave = () => {
         if (!desc || !amount) {
-            alert("Must inform description!");
+            alert("Must inform description and value!");
             return;
         } else if (amount < 1) {
-            alert("Must be a positive number!");
+            alert("Must be a positive value!");
             return;
         }
+
+        const transaction = {
+            id: transactionID(),
+            desc: desc,
+            amount: amount,
+            expense: isExpense,
+        };
+
+        handleAdd(transaction);
+        setDesc("");
+        setAmount("");
     };
+    
     return (
         <>
             <C.Container>
@@ -32,8 +46,8 @@ const Form = () => {
                     <C.Label htmlFor='radioIncome'>Income</C.Label>
                     <C.Input type="radio" id="radioExpenses" defaultChecked name="group1" onChange={() => setExpense(!isExpense)} />
                     <C.Label htmlFor='radioExpenses'>Expense</C.Label>
-                    <C.Button onClick={ handleSave }>ADD</C.Button>
-                </C.RadioGroup>
+                    </C.RadioGroup>
+                <C.Button onClick={ handleSave }>ADD</C.Button>
             </C.Container>
         </>
   );

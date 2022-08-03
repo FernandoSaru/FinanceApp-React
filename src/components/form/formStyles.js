@@ -51,4 +51,5 @@ export const Button = styled.button`
     cursor: pointer;
     color: white;
     background-color: teal;
+    min-width: 10%;
 `;
