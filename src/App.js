@@ -2,6 +2,7 @@ import React from "react";
 import GlobalStyle from "./styles/globalStyles";
 import Header from "./components/header/header";
 import Panel from "./components/panel/panel";
+import Form from "./components/form/form";
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <>
     <Header />
     <Panel />
+    <Form />
     <GlobalStyle />
     </>
     );
